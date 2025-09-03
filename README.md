@@ -1,81 +1,76 @@
 📦 E-Commerce Data Analysis Project 📌 Overview
 
-This project demonstrates a complete end-to-end analytics workflow for an e-commerce dataset. It covers:
-
-Data ingestion: CSV → MySQL database
-
-Analysis: Jupyter Notebook (Python, Pandas, SQLAlchemy)
-
-Visualization: Power BI dashboard
+This project demonstrates a complete end-to-end analytics workflow for an e-commerce dataset. 
+It covers:
+**. Data ingestion:** CSV → MySQL database
+**. Analysis:** Jupyter Notebook (Python, Pandas, SQLAlchemy)
+**. Visualization:** Power BI dashboard
 
 The goal is to uncover insights about orders, customers, sellers, products, payments, and logistics.
 
-📂 Project Structure ecommerce_project/ │ ├── data/ # Raw CSV files ├── logs/ # Ingestion logs ├── ingestion_db.py # ETL script (CSV → MySQL) ├── final.ipynb # Jupyter notebook (analysis & KPIs) ├── e-commerce dashboard.pbix # Power BI dashboard ├── ecommerce_eda_summary.md # Auto-generated EDA report └── README.md # Project documentation
+📂 Project Structure:
 
-⚙️ Setup Instructions
+    ├── data/                     # Raw CSV files
+    ├── ingestion_db.py           # ETL script (CSV → MySQL)
+    ├── main.ipynb               # Jupyter notebook (analysis & KPIs)
+    ├── e-commerce dashboard.pbix # Power BI dashboard
+    └── README.md                 # Project documentation
 
-Requirements
-Python 3.8+
+**⚙️ Setup Instructions**
 
-MySQL database
+1. Requirements:
+    . Python 3.8+
+    . MySQL database
+    . Power BI Desktop (for dashboard)
 
-Power BI Desktop (for dashboard)
+2. Install dependencies:
+    pip install pandas sqlalchemy mysql-connector-python jupyter matplotlib
 
-Install dependencies:
+3. Database Setup
+  . Create a MySQL database:
+      CREATE DATABASE commerce;
 
-pip install pandas sqlalchemy mysql-connector-python jupyter matplotlib
+  . Ingest Data into MySQL
+         Place raw CSV files inside the data/ folder, then run:
+         python ingestion_db.py
 
-Database Setup
-Create a MySQL database:
+  This will load all CSVs as tables inside the commerce database.
 
-CREATE DATABASE commerce;
+4. Run Analysis Notebook
+      This notebook connects to MySQL, runs queries, computes KPIs, and performs EDA.
 
-Ingest Data into MySQL
-Place raw CSV files inside the data/ folder, then run:
+5. Open Power BI Dashboard
+      Open e-commerce dashboard.pbix in Power BI Desktop. Refresh the data connection to pull the latest analysis.
 
-python ingestion_db.py
+**📊 Key Insights**
 
-This will load all CSVs as tables inside the commerce database.
+    . Total Revenue (GMV): ~20M
 
-Run Analysis Notebook
-Open Jupyter Notebook:
+    . Customers: ~98K
 
-jupyter notebook final.ipynb
+    . Orders: ~98K
 
-This notebook connects to MySQL, runs queries, computes KPIs, and performs EDA.
+    . Average Order Value (AOV): ~172
 
-Open Power BI Dashboard
-Open e-commerce dashboard.pbix in Power BI Desktop. Refresh the data connection to pull the latest analysis.
+    . Top Categories: Electronics, Home & Furniture, Fashion
 
-📊 Key Insights
+    . Payment Method: Credit cards dominate transactions
 
-Total Revenue (GMV): ~20M
+    . Regional Revenue: SP and RJ are top states
 
-Customers: ~98K
+    . Delivery: Median ~10–12 days, some delays beyond SLA
 
-Orders: ~98K
+**🚀 Future Improvements**
 
-Average Order Value (AOV): ~172
+    . Automate ETL with Airflow/Prefect
 
-Top Categories: Electronics, Home & Furniture, Fashion
+    . Support incremental data loads
 
-Payment Method: Credit cards dominate transactions
+    . Build customer segmentation (RFM)
 
-Regional Revenue: SP and RJ are top states
+    . Add predictive models (LTV, churn, demand forecasting)
 
-Delivery: Median ~10–12 days, some delays beyond SLA
-
-🚀 Future Improvements
-
-Automate ETL with Airflow/Prefect
-
-Support incremental data loads
-
-Build customer segmentation (RFM)
-
-Add predictive models (LTV, churn, demand forecasting)
-
-Cloud deployment for scalability
+    . Cloud deployment for scalability
 
 📜 License
 
