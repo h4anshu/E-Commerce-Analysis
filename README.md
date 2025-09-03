@@ -31,8 +31,8 @@ The goal is to uncover insights about orders, customers, sellers, products, paym
       CREATE DATABASE commerce;
 
   . Ingest Data into MySQL
-         Place raw CSV files inside the data/ folder, then run:
-         python ingestion_db.py
+         . Place raw CSV files inside the data/ folder, then run:
+           python ingestion_db.py
 
   This will load all CSVs as tables inside the commerce database.
 
